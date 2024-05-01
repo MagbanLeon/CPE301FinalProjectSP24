@@ -1,5 +1,5 @@
-#include <RTClib.h>
-#include<Wire.h>
+#include <RTClib.h> //For RTC
+#include<Wire.h>    //Also for RTC
 #include <LiquidCrystal.h> //For LCD: https://www.arduino.cc/reference/en/libraries/liquidcrystal/
 //#include <Stepper.h> //For stepper motor: https://www.arduino.cc/reference/en/libraries/stepper/
 
