@@ -15,6 +15,7 @@ Stepper myStepper = Stepper(stepsPerRevolution, 8, 10, 9, 11);
 
 //Function Def
 void updateTime();
+void stepperStuff();
 
 void setup(){
     //Serial.begin(9600);
@@ -27,6 +28,7 @@ void setup(){
 
 void loop(){
     updateTime();
+    stepperStuff();
 }
 
 void updateTime(){
@@ -47,4 +49,16 @@ void updateTime(){
     lcd.print(':');
     lcd.print((now.second() /10) % 10);
     lcd.print(now.second() % 10, DEC);
+}
+
+void stepperStuff(){
+    // Rotate CW slowly at 5 RPM
+    myStepper.setSpeed(5);
+    myStepper.step(stepsPerRevolution);
+    delay(1000);
+
+    // Rotate CCW quickly at 10 RPM
+    myStepper.setSpeed(10);
+    myStepper.step(-stepsPerRevolution);
+    delay(1000);
 }
