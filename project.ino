@@ -51,7 +51,7 @@ void updateTime(){
     lcd.print(now.second() % 10, DEC);
 }
 
-void stepperStuff(){
+void stepperStuff(){    //taken from the slides
     // Rotate CW slowly at 5 RPM
     myStepper.setSpeed(5);
     myStepper.step(stepsPerRevolution);
