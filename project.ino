@@ -6,13 +6,13 @@
 
 
 const int RS = 11, EN = 12, D4 = 2, D5 = 3, D6 = 4, D7 = 5;
-  LiquidCrystal lcd(RS, EN, D4, D5, D6, D7);
-  RTC_DS1307 rtc;
+    LiquidCrystal lcd(RS, EN, D4, D5, D6, D7);
+    RTC_DS1307 rtc;
 
 void updateTime();
 
 void setup(){
-//Serial.begin(9600);
+    //Serial.begin(9600);
     lcd.begin(16, 2);
     
     Wire.begin();
