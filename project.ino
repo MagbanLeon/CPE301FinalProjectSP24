@@ -1,14 +1,19 @@
 #include <RTClib.h> //For RTC
 #include<Wire.h>    //Also for RTC
 #include <LiquidCrystal.h> //For LCD: https://www.arduino.cc/reference/en/libraries/liquidcrystal/
-//#include <Stepper.h> //For stepper motor: https://www.arduino.cc/reference/en/libraries/stepper/
+#include <Stepper.h> //For stepper motor: https://www.arduino.cc/reference/en/libraries/stepper/
 
 
 
 const int RS = 11, EN = 12, D4 = 2, D5 = 3, D6 = 4, D7 = 5;
-    LiquidCrystal lcd(RS, EN, D4, D5, D6, D7);
-    RTC_DS1307 rtc;
+LiquidCrystal lcd(RS, EN, D4, D5, D6, D7);
 
+RTC_DS1307 rtc;
+
+const int stepsPerRevolution = 2038;
+Stepper myStepper = Stepper(stepsPerRevolution, 8, 10, 9, 11);
+
+//Function Def
 void updateTime();
 
 void setup(){
