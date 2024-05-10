@@ -62,3 +62,58 @@ void stepperStuff(){    //taken from the slides
     myStepper.step(-stepsPerRevolution);
     delay(1000);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//DHT Code
+
+#include <DHT.h>
+
+
+//Initializing pin 8 to our DHT11
+DHT ourDHT(8, DHT11);
+
+void setup(){
+  Serial.begin(9600);
+
+  ourDHT.begin();
+
+}
+
+void loop(){
+
+  float temperature = ourDHT.readTemperature();
+  float humidity = ourDHT.readHumidity();
+
+
+  Serial.print(" \n\n\n\n\n\n\n\n\n");
+  
+
+  Serial.print("Temperature: ");
+  Serial.print(temperature);
+  Serial.print(" °C\n");
+
+  Serial.print("Humidity: ");
+  Serial.print(humidity);
+  
+
+  delay(500);
+
+}
